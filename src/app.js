@@ -19,6 +19,9 @@ export const CartDrawer = createContext(null);
 export const CartProducts = createContext(null);
 
 const AppLayout = () => {
+  sessionStorage.setItem('cart',[]);
+  const sessionCart = sessionStorage.getItem('cart');
+    console.log(sessionCart);
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
 

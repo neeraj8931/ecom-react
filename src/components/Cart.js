@@ -18,6 +18,7 @@ const Cart = () => {
   const updateCartItem=(index)=>{
     updatedCart.splice(index, 1);
     console.log(updatedCart);
+    sessionStorage.setItem('cart',updateCartItem);
     setCart(updatedCart);
   }
   console.log(cartTotal);
@@ -37,7 +38,7 @@ const Cart = () => {
           console.log(updatedCart);
           return (
             
-            <div className="cart-item mt-[30px] w-full flex justify-items-center text-white">
+            <div key={cartItem.product.id} className="cart-item mt-[30px] w-full flex justify-items-center text-white">
               <Link to={"/products/"+ cartItem.product.id}>
               <img
                 className="w-[100px]"
